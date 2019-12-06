@@ -8,9 +8,11 @@
     "coinDifficultyTarget": 120,
 
     "daemonType": "default",
-    "cnAlgorithm": "cryptonight",
-    "cnVariant": 1,
+    "cnAlgorithm": "randomx",
+    "cnVariant": 0,
     "cnBlobType": 0,
+    "includeHeight": false,
+    "isRandomX": true,
 
     "logging": {
         "files": {
@@ -71,8 +73,8 @@
         "varDiff": {
             "minDiff": 100,
             "maxDiff": 100000000,
-            "targetTime": 60,
-            "retargetTime": 30,
+            "targetTime": 120,
+            "retargetTime": 60,
             "variancePercent": 30,
             "maxJump": 100
         },
@@ -108,7 +110,7 @@
         "enabled": true,
         "interval": 1800,
         "maxAddresses": 50,
-        "mixin": 5,
+        "mixin": 7,
         "priority": 0,
         "transferFee": 14000000000,
         "dynamicTransferFee": true,
