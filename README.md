@@ -184,7 +184,7 @@ Explanation for each field:
 "poolHost": "your.pool.host",
 
 /* Used for storage in redis so multiple coins can share the same redis instance. */
-"coin": "graft",
+"coin": "graft", // Must match the parentCoin variable in config.js
 
 /* Used for front-end display */
 "symbol": "GRFT",
@@ -197,6 +197,9 @@ Explanation for each field:
   
 /* Coin network time to mine one block, see DIFFICULTY_TARGET constant in DAEMON_CODE/src/cryptonote_config.h */
 "coinDifficultyTarget": 120,
+
+"blockchainExplorer": "http://blockexplorer.arqma.com/block/{id}",  //used on blocks page to generate hyperlinks.
+"transactionExplorer": "http://blockexplorer.arqma.com/tx/{id}",    //used on the payments page to generate hyperlinks
 
 /* Set daemon type. Supported values: default, forknote (Fix block height + 1), bytecoin (ByteCoin Wallet RPC API) */
 "daemonType": "default",
@@ -264,7 +267,10 @@ Explanation for each field:
 
     /* This is the integrated address prefix used for miner login validation. */
     "intAddressPrefix": 91,
-
+    
+    /* This is the Subaddress prefix used for miner login validation. */
+    "subAddressPrefix": 252,
+    
     /* Poll RPC daemons for new blocks every this many milliseconds. */
     "blockRefreshInterval": 1000,
 

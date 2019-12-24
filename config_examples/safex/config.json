@@ -1,19 +1,19 @@
 {
     "poolHost": "your.pool.host",
 
-    "coin": "arqma",
-    "symbol": "ARQ",
-    "coinUnits": 1000000000,
-    "coinDecimalPlaces": 9,
+    "coin": "safex",
+    "symbol": "SAFEX",
+    "coinUnits": 10000000000,
+    "coinDecimalPlaces": 4,
     "coinDifficultyTarget": 120,
-    "blockchainExplorer": "http://blockexplorer.arqma.com/block/{id}",
-    "transactionExplorer": "http://blockexplorer.arqma.com/tx/{id}",
-    "cnAlgorithm": "randomx",
-    "cnVariant": 2,
-    "cnBlobType": 0,
-    "isRandomX": true,
-    "includeHeight": false,
 
+    "daemonType": "default",
+    "cnAlgorithm": "randomx",
+    "cnVariant": 0,
+    "cnBlobType": 23,
+    "includeHeight": false,
+    "isRandomX": true,
+    
     "logging": {
         "files": {
             "level": "info",
@@ -25,13 +25,15 @@
             "colors": true
         }
     },
+
     "childPools": null,
+    
     "poolServer": {
         "enabled": true,
         "mergedMining": false,
         "clusterForks": "auto",
         "poolAddress": "** Your pool wallet address **",
-        "intAddressPrefix": 19,
+        "intAddressPrefix": 251,
         "blockRefreshInterval": 1000,
         "minerTimeout": 900,
         "sslCert": "./cert.pem",
@@ -109,14 +111,15 @@
 
     "payments": {
         "enabled": true,
-        "interval": 600,
-        "maxAddresses": 20,
-        "mixin": 10,
+        "interval": 1800,
+        "maxAddresses": 50,
+        "mixin": 5,
         "priority": 0,
-        "transferFee": 100000,
+        "transferFee": 20000000,
         "dynamicTransferFee": true,
         "minerPayFee" : true,
-        "minPayment": 25000000,
+        "minPayment": 20000000000,
+        "maxPayment": 5000000000000,
         "maxTransactionAmount": 0,
         "denomination": 100000000
     },
@@ -124,7 +127,7 @@
     "blockUnlocker": {
         "enabled": true,
         "interval": 30,
-        "depth": 18,
+        "depth": 60,
         "poolFee": 0.8,
         "devDonation": 0.2,
         "networkFee": 0.0
@@ -149,12 +152,12 @@
 
     "daemon": {
         "host": "127.0.0.1",
-        "port": 19994
+        "port": 17402
     },
 
     "wallet": {
         "host": "127.0.0.1",
-        "port": 19995
+        "port": 17404
     },
 
     "redis": {
@@ -234,8 +237,9 @@
         },
         "botCommands": {
             "stats": "/stats",
-            "enable": "/enable",
-            "disable": "/disable"
+            "report": "/report",
+            "notify": "/notify",
+            "blocks": "/blocks"
         }
     },
     
@@ -251,7 +255,7 @@
     },
 
     "prices": {
-        "source": "altex",
+        "source": "tradeogre",
         "currency": "USD"
     },
     
@@ -310,6 +314,10 @@
             "payments": {
                 "enabled": true
             }
+        },
+        "blocks": {
+            "enabled": true,
+            "days": 30
         }
     }
 }
